@@ -2,12 +2,10 @@ services:
   - name: webview-app
     type: web
     env: static
-    staticPublishPath: /
-    buildCommand: ""
-    startCommand: ""
+    staticPublishPath: . # O diretório atual será usado para publicar arquivos estáticos
+    buildCommand: "" # Sem necessidade de build para arquivos estáticos simples
+    startCommand: "" # Sem necessidade de start command para serviços estáticos
     regions:
-      - oregon  # Altere para a região desejada
+      - oregon # Alterar para uma região disponível no Render, se necessário
     customDomains:
-      - your-custom-domain.com # Substitua pelo seu domínio, se aplicável
-    envVars:
-      NODE_ENV: production
+      - your-custom-domain.com # Substitua pelo seu domínio ou remova esta linha se não for usar
